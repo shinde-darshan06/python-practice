@@ -12,7 +12,7 @@ while True:
     if is_prime == True:
         print(num1)
         count = count+1
-        #num1 = num1+1
+   
     if count == num:
         break
     num1=num1+1
