@@ -165,21 +165,60 @@ def add_dots(str):
     str1 = '.'.join(str)
     return str1
 
-
 def remove_dots(str1):
     str2 = str1.replace(".", "")
     return str2
-
 
 str = "test"
 print(add_dots(str))
 print(remove_dots(add_dots(str)))
 
-
 # method 2:
 def add_dots(s):
     return ".".join(s)
 
-
 def remove_dots(s):
     return s.replace(".", "")
+
+# pallindrom
+num = int(input("enter number: "))
+rev, temp = 0, num
+while temp > 0:
+    digit = temp % 10
+    rev = rev * 10 + digit
+    temp = temp // 10
+
+if num == rev:
+    print("{} is a pallindrom number".format(num))
+
+else:
+    print("{} number is not pallindrom".format(num))
+
+# anagram:
+# method 1:
+def is_anagram(str1, str2):
+    if len(str1) != len(str2):
+        return False
+
+    str1_sorted = sorted(list(str1))
+    str2_sorted = sorted(list(str2))
+
+    if str1_sorted == str2_sorted:
+        return True
+    else:
+        return False
+
+print(is_anagram("aba", "baa"))
+print(is_anagram("abaa", "baa"))
+
+# method 2:
+def is_anagram(str1, str2):
+    if len(str1) == len(str2):
+        for i in str1:
+            if i in str2:
+                return True
+    return False
+
+
+print(is_anagram("aba", "baa"))
+print(is_anagram("abaa", "baa"))
